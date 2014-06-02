@@ -21,11 +21,7 @@
       'click .new-linked-ticket'        : 'displayForm',
       'click .create-linked-ticket'     : 'create',
       'click .copy_description'         : 'copyDescription',
-      'change select[name=requester_type]' : function(event){
-        if (this.$(event.target).val() == 'custom')
-          return this.formRequesterFields().show();
-        return this.formRequesterFields().hide();
-      },
+      'change select[name=requester_type]' : 'handleRequesterTypeChange',
       'change select[name=assignee_type]' : function(event){
         if (this.$(event.target).val() == 'custom')
           return this.formAssigneeFields().show();
@@ -35,7 +31,8 @@
       'click .token .delete'            : function(e) { this.$(e.target).parent('li.token').remove(); },
       'keypress .add_token input'       : function(e) { if(e.charCode === 13) { this.formTokenInput(e.target, true);}},
       'input .add_token input'            : function(e) { this.formTokenInput(e.target); },
-      'focusout .add_token input'         : function(e) { this.formTokenInput(e.target,true); }
+      'focusout .add_token input'         : function(e) { this.formTokenInput(e.target,true); },
+      'focusout .linked_ticket_form [required]' : 'handleRequiredFieldFocusout'
     },
 
     requests: {
@@ -226,22 +223,40 @@
     },
 
     formIsValid: function(){
-      return _.all(['.subject', '.description'], function(field) {
-        return this.validateFormField(field);
+      var requiredFields = this.$('form.linked_ticket_form [required]'),
+          validatedFields = this.validateFormFields(requiredFields);
+
+      return _.all(validatedFields, function(validatedField) {
+        return validatedField === true;
       }, this);
     },
 
-    validateFormField: function(field){
+    validateFormFields: function(fields){
+      var validatedFields = [];
+
+      _.each(fields, function(field) {
+        var isValid = this.validateField(field);
+        validatedFields.push(isValid);
+      }, this);
+
+      return validatedFields;
+    },
+
+    validateField: function(field) {
       var viewField = this.$(field),
       valid = !_.isEmpty(viewField.val());
 
       if (valid){
         viewField.parents('.control-group').removeClass('error');
+        return true;
       } else {
         viewField.parents('.control-group').addClass('error');
+        return false;
       }
+    },
 
-      return valid;
+    handleRequiredFieldFocusout: function(event) {
+      this.validateField(event.currentTarget);
     },
 
     spinnerOff: function(){
@@ -330,8 +345,25 @@
               return {"label": user.email, "value": user.email};
             }));
           });
+        },
+        select: function() {
+          self.$('.requester_name').prop('required', false);
+          self.$('.requester_fields .control-group').removeClass('error');
         }
       });
+    },
+
+    handleRequesterTypeChange: function(event){
+      var self = this,
+          fields = this.formRequesterFields().find('input');
+
+      if (this.$(event.target).val() == 'custom') {
+        this.formRequesterFields().show();
+        fields.prop('required', true);
+      } else {
+        this.formRequesterFields().hide();
+        fields.prop('required', false);
+      }
     },
 
     groupChanged: function(){

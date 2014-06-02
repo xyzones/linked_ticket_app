@@ -2,10 +2,10 @@
   <div class="well span12">
     <form class="linked_ticket_form">
 
-      <strong>{{t "form.requester.label"}}</strong>
+      <strong>* {{t "form.requester.label"}}</strong>
       <div class="control-group">
-        <select name="requester_type" class="span12">
-          <option>-</option>
+        <select name="requester_type" class="span12" required>
+          <option value="">-</option>
           <option value="current_user">{{t "form.requester.current_user"}} - {{current_user.email}}</option>
           <option value="ticket_requester">{{t "form.requester.ticket_requester"}} - {{ticket.requester.email}}</option>
           <option value="custom">{{t "form.requester.custom"}}</option>
@@ -15,15 +15,15 @@
       <div class="requester_fields">
         <div class="control-group">
           <label>
-            {{t "form.requester_email.label"}}
-            <input type="text" class="requester_email span12" >
+            * {{t "form.requester_email.label"}}
+            <input type="text" class="requester_email span12">
           </label>
         </div>
 
         <div class="control-group">
           <label>
-            {{t "form.requester_name.label"}}
-            <input type="text" class="requester_name span12" >
+            * {{t "form.requester_name.label"}}
+            <input type="text" class="requester_name span12">
           </label>
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="control-group">
         <label>
           <select name="assignee_type" class="span12">
-            <option>-</option>
+            <option value="">-</option>
             <option value="current_user">{{t "form.assignee.current_user"}} - {{current_user.email}}</option>
             <option value="ticket_assignee">{{t "form.assignee.ticket_assignee"}} - {{ticket.assignee.group.name}}/{{ticket.assignee.user.email}}</option>
             <option value="custom">{{t "form.assignee.custom"}}</option>
@@ -86,8 +86,10 @@
       </div>
 
       <div class="control-group">
-        <strong>* {{t "form.subject.label"}}</strong>
-        <input type="text" class="subject span12">
+        <label>
+          <strong>* {{t "form.subject.label"}}</strong>
+          <input type="text" class="subject span12" required>
+        </label>
       </div>
 
       <div class="control-group">
@@ -97,8 +99,10 @@
       </div>
 
       <div class="control-group">
-        <strong>* {{t "form.description.label"}}</strong>
-        <textarea rows="8" class="description span12"></textarea>
+        <label>
+          <strong>* {{t "form.description.label"}}</strong>
+          <textarea rows="8" class="description span12" required></textarea>
+        </label>
       </div>
 
       <div class="centered">
