@@ -280,6 +280,7 @@
 
       var is_child = this.childRegex.test(custom_field.value);
 
+
       var group = _.find(data.groups, function(item){
         return item.id == data.ticket.group_id;
       });
@@ -292,10 +293,18 @@
         data.ticket.locale[name] = this.localizeTicketValue(name, data.ticket[name]);
       }).bind(this));
 
+      if(this.ticket().status() == "closed") {
+        var parent_closed = true;
+      }
+      else {
+        var parent_closed = false;
+      }
+
       this.switchTo('has_relation', { ticket: data.ticket,
                                       is_child: is_child,
                                       assignee: assignee,
-                                      group: group
+                                      group: group,
+                                      closed_warn: parent_closed
                                     });
     },
 

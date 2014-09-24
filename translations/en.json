@@ -229,5 +229,9 @@
   "create_ticket": {
     "title": "empty",
     "value": "Create a ticket"
+  },
+  "closed_warn": {
+    "title": "A warning that the current ticket is closed and cannot reference the child",
+    "value": "The parent ticket is closed and cannot be modified. Only the child ticket will continue to contain a reference"
   }
 }

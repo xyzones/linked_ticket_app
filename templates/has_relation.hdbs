@@ -86,5 +86,14 @@
         {{group.name}}
       </div>
     </div>
+
+    {{#if is_child}}
+      {{#if closed_warn}}
+        <div class="span12">
+          <p class="closed text-warning">{{t "closed_warn"}}</p>
+        </div>
+      {{/if}}
+    {{/if}}
+    
   </div>
 </div>

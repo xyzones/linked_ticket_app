@@ -42,3 +42,8 @@ div.spinner
   z-index:2;
   overflow: auto;
 }
+
+.text-warning {
+  color: #a94442;
+  font-size: 95%;
+}
