@@ -293,11 +293,10 @@
         data.ticket.locale[name] = this.localizeTicketValue(name, data.ticket[name]);
       }).bind(this));
 
+      var parent_closed = false;
+
       if(this.ticket().status() == "closed") {
-        var parent_closed = true;
-      }
-      else {
-        var parent_closed = false;
+        parent_closed = true;
       }
 
       this.switchTo('has_relation', { ticket: data.ticket,
