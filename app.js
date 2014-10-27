@@ -80,6 +80,14 @@
           url: '/api/v2/groups/' + group_id + '/users.json',
           type: 'GET'
         };
+      },
+      paginatedRequest: function(request, page, args) {
+        var requestArgs = this.requests[request];
+        if (_.isFunction(requestArgs)) {
+          requestArgs = requestArgs.apply(this, args);
+        }
+        requestArgs.url += (/\?/.test(requestArgs.url)) ? '&page=' + page : '?page=' + page;
+        return requestArgs;
       }
     },
 
@@ -110,7 +118,9 @@
     displayForm: function(event){
       event.preventDefault();
 
-      this.ajax('fetchGroups');
+      this.paginateRequest('fetchGroups').then(function(data){
+        this.fillGroupWithCollection(data.groups);
+      }.bind(this));
 
       this.switchTo('form', {
         current_user: {
@@ -382,7 +392,7 @@
 
       this.spinnerOn();
 
-      this.ajax('fetchUsersFromGroup', group_id)
+      this.paginateRequest('fetchUsersFromGroup', group_id)
         .done(function(data){
           this.formShowAssignee();
           this.fillAssigneeWithCollection(data.users);
@@ -477,6 +487,36 @@
         };
       }
       return attributes;
+    },
+
+    paginateRequest: function(request, options) {
+      var requestArgs = Array.prototype.slice.call(arguments, 1),
+          property = /^fetch(\w+?)(?:$|From)/.exec(request)[1].toLowerCase(),
+          arrayData = [],
+          page = 1;
+
+      return this.promise(function(done, fail) {
+        function onSuccess(data) {
+          arrayData = arrayData.concat(data[property]);
+          if (data.next_page) {
+            makeRequest();
+          } else {
+            var returnObj = {};
+            returnObj[property] = arrayData;
+            done.call(this, returnObj);
+          }
+        }
+
+        function onFail() {
+          fail.apply(this, arguments);
+        }
+
+        var makeRequest = function() {
+          this.ajax.call(this, 'paginatedRequest', request, page++, requestArgs).then(onSuccess, onFail);
+        }.bind(this);
+
+        makeRequest();
+      }.bind(this));
     },
 
     // HELPERS
