@@ -16,7 +16,7 @@
 
 select {
   display: block;
-  border: 1px solid #CCC; 
+  border: 1px solid #CCC;
 }
 
 .token_list {
@@ -46,4 +46,8 @@ div.spinner
 .text-warning {
   color: #a94442;
   font-size: 95%;
+}
+
+.well .new-linked-ticket + .closed {
+  margin-top: 1em;
 }
