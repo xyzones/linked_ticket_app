@@ -47,7 +47,3 @@ div.spinner
   color: #a94442;
   font-size: 95%;
 }
-
-.well .new-linked-ticket + .closed {
-  margin-top: 1em;
-}

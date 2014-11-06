@@ -1,8 +1,8 @@
+{{#if closed_warn}}
+  <div class="alert alert-danger">{{t "closed_warn"}}</div>
+{{/if}}
 <div class="well">
   <div class="row-fluid centered">
     <a class="new-linked-ticket btn btn-success btn-large">{{t "create_ticket"}}</a>
-    {{#if closed_warn}}
-      <p class="closed text-warning">{{t "closed_warn"}}</p>
-    {{/if}}
   </div>
 </div>

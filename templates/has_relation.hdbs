@@ -1,3 +1,7 @@
+{{#if closed_warn}}
+  <div class="alert alert-danger">{{t "closed_warn"}}</div>
+{{/if}}
+
 <div class="well well-small">
   <div class="row-fluid">
     <div class="span12">
@@ -87,13 +91,5 @@
       </div>
     </div>
 
-    {{#if is_child}}
-      {{#if closed_warn}}
-        <div class="span12">
-          <p class="closed text-warning">{{t "closed_warn"}}</p>
-        </div>
-      {{/if}}
-    {{/if}}
-    
   </div>
 </div>

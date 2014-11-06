@@ -128,6 +128,7 @@
         current_user: {
           email: this.currentUser().email()
         },
+        closed_warn: this.ticket().status() == "closed",
         tags: this.tags(),
         ccs: this.ccs()
       });

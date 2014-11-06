@@ -1,3 +1,7 @@
+{{#if closed_warn}}
+  <div class="alert alert-danger">{{t "closed_warn"}}</div>
+{{/if}}
+
 <div class="row-fluid">
   <div class="well span12">
     <form class="linked_ticket_form">
