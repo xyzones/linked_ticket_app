@@ -112,7 +112,9 @@
     },
 
     displayHome: function(){
-      this.switchTo('home');
+      this.switchTo('home', {
+        closed_warn: this.ticket().status() == "closed"
+      });
     },
 
     displayForm: function(event){
@@ -126,6 +128,7 @@
         current_user: {
           email: this.currentUser().email()
         },
+        closed_warn: this.ticket().status() == "closed",
         tags: this.tags(),
         ccs: this.ccs()
       });
@@ -325,13 +328,15 @@
     createChildTicketDone: function(data){
       var value = "parent_of:" + data.ticket.id;
 
-      this.ticket().customField("custom_field_" + this.ancestryFieldId(),value);
+      if(this.ticket().status() != "closed") {
+        this.ticket().customField("custom_field_" + this.ancestryFieldId(),value);
 
-      this.ajax('updateTicket',
-                this.ticket().id(),
-                { "ticket": { "custom_fields": [
-                  { "id": this.ancestryFieldId(), "value": value }
-                ]}});
+        this.ajax('updateTicket',
+                  this.ticket().id(),
+                  { "ticket": { "custom_fields": [
+                    { "id": this.ancestryFieldId(), "value": value }
+                  ]}});
+      }
 
       this.ajax('fetchTicket', data.ticket.id);
 
