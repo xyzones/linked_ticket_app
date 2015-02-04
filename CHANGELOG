@@ -1,3 +1,5 @@
+2015-02-04 Alistair Roche <aroche@zendesk.com>
+    * Use Apps Requirements to create custom ticket field
 2013-02-15 Pierre Nespo <pierre.nespo@gmail.com>
 	* Bump to v1.0: Major change is the modification of the parameter name (from data_field to ancestry_field)
 2013-03-07 Pierre Nespo <pierre.nespo@gmail.com>

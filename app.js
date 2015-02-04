@@ -556,7 +556,7 @@
       return this.ticket().customField("custom_field_" + this.ancestryFieldId());
     },
     ancestryFieldId: function(){
-      return this.setting('ancestry_field');
+      return this.requirement('linked_ticket_id').requirement_id;
     },
     hasChild: function(){
       return this.parentRegex.test(this.ancestryValue());

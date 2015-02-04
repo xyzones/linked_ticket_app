@@ -7,11 +7,6 @@
 
   "parameters": [
     {
-      "name": "ancestry_field",
-      "type": "text",
-      "required": true
-    },
-    {
       "name": "child_tag",
       "type": "text"
     }
