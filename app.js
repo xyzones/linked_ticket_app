@@ -111,13 +111,21 @@
       }
     },
 
+    ticketIsClosed: function() {
+      return this.ticket().status() == "closed";
+    },
+
     displayHome: function(){
       this.switchTo('home', {
-        closed_warn: this.ticket().status() == "closed"
+        closed_warn: this.ticketIsClosed()
       });
     },
 
     displayForm: function(event){
+      if(this.ticketIsClosed()) {
+        return;
+      }
+
       event.preventDefault();
 
       this.paginateRequest('fetchGroups').then(function(data){
@@ -128,7 +136,7 @@
         current_user: {
           email: this.currentUser().email()
         },
-        closed_warn: this.ticket().status() == "closed",
+        closed_warn: this.ticketIsClosed(),
         tags: this.tags(),
         ccs: this.ccs()
       });
@@ -308,7 +316,7 @@
 
       var parent_closed = false;
 
-      if(this.ticket().status() == "closed") {
+      if(this.ticketIsClosed()) {
         parent_closed = true;
       }
 
