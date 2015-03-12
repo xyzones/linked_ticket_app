@@ -4,7 +4,6 @@
     "name": "Zendesk",
     "email": "support@zendesk.com"
   },
-
   "parameters": [
     {
       "name": "ancestry_field",
@@ -16,10 +15,11 @@
       "type": "text"
     }
   ],
-
   "defaultLocale": "en",
   "private": false,
-  "location": ["ticket_sidebar"],
+  "location": [
+    "ticket_sidebar"
+  ],
   "frameworkVersion": "1.0",
-  "version": "1.8"
+  "version": "1.9.0"
 }
