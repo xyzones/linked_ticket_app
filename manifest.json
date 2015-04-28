@@ -1,18 +1,25 @@
 {
   "name": "Linked Ticket",
   "author": {
-    "name": "Zendesk",
-    "email": "support@zendesk.com"
+    "name": "Zendesk Services - Luiz Faias",
+    "email": "services@zendesk.com"
   },
   "parameters": [
     {
       "name": "ancestry_field",
       "type": "text",
-      "required": true
+      "required": true,
+      "default": 24878047
     },
     {
       "name": "child_tag",
       "type": "text"
+    },
+    {
+      "name": "child_status_field",
+      "type": "text",
+      "required": true,
+      "default": 26569512
     }
   ],
   "defaultLocale": "en",
@@ -21,5 +28,5 @@
     "ticket_sidebar"
   ],
   "frameworkVersion": "1.0",
-  "version": "1.9.0"
+  "version": "1.9.0 custom"
 }

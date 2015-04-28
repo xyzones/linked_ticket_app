@@ -6,6 +6,7 @@
     events: {
       // APP EVENTS
       'app.activated'                   : 'onActivated',
+      'ticket.submit.done'              : 'updateParentWithChildStatus',
       'ticket.status.changed'           : 'loadIfDataReady',
       // AJAX EVENTS
       'createChildTicket.done'          : 'createChildTicketDone',
@@ -95,6 +96,7 @@
       _.defer(function() {
         if (this.hideAncestryField()) {
           this.loadIfDataReady();
+          this.hideChildStatusField();
         }
       }.bind(this));
     },
@@ -301,6 +303,11 @@
 
       var is_child = this.childRegex.test(custom_field.value);
 
+      if(is_child) {
+        this.hideSolvedStatusFromParentTicket(data.ticket.status);
+      } else {
+          this.updateParentWithChildStatus();
+      }
 
       var group = _.find(data.groups, function(item){
         return item.id == data.ticket.group_id;
@@ -326,6 +333,22 @@
                                       group: group,
                                       closed_warn: parent_closed
                                     });
+    },
+
+    hideSolvedStatusFromParentTicket: function(childStatus) {
+      var is_child_solved = _.contains(['solved', 'closed'], childStatus);
+
+      if(is_child_solved) {
+        this.ticketFields('status').options('solved').show();
+      } else {
+          this.ticketFields('status').options('solved').hide();
+      }
+    },
+
+    updateParentWithChildStatus: function() {
+      this.ajax('updateTicket', this.parentID(),
+        { "ticket": { "custom_fields": [{ "id": this.childStatusFieldId(), "value": "child_status_" + this.ticket().status() }] }}
+      );
     },
 
     localizeTicketValue: function(name, value) {
@@ -565,6 +588,15 @@
     },
     ancestryFieldId: function(){
       return this.setting('ancestry_field');
+    },
+    hideChildStatusField: function(){
+      this.ticketFields("custom_field_" + this.childStatusFieldId()).hide();
+    },
+    childStatusValue: function(){
+      return this.ticket().customField("custom_field_" + this.childStatusFieldId());
+    },
+    childStatusFieldId: function(){
+      return this.setting('child_status_field');
     },
     hasChild: function(){
       return this.parentRegex.test(this.ancestryValue());
