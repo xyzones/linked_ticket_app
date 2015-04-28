@@ -6,7 +6,7 @@
     events: {
       // APP EVENTS
       'app.activated'                   : 'onActivated',
-      'ticket.submit.done'              : 'updateParent',
+      'ticket.submit.done'              : 'updateParentWithChildStatus',
       'ticket.status.changed'           : 'loadIfDataReady',
       // AJAX EVENTS
       'createChildTicket.done'          : 'createChildTicketDone',
@@ -111,10 +111,6 @@
 
         this.displayHome();
       }
-    },
-
-    ticketIsSolved: function() {
-      return this.ticket().status() == "solved";
     },
 
     ticketIsClosed: function() {
@@ -349,31 +345,9 @@
       }
     },
 
-    updateParent: function() {
-      if(this.hasParent()) {
-        this.updateParentWithChildStatus();
-
-        if(this.ticketIsSolved()) {
-          var internal_note = "Child ticket #" + this.ticket().id() + " is solved.";
-
-          this.ajax('updateTicket', this.parentID(),
-            {
-              "ticket": {
-                "comment": { "body": internal_note, "public": false }
-              }
-            }
-          );
-        }
-      }
-    },
-
     updateParentWithChildStatus: function() {
       this.ajax('updateTicket', this.parentID(),
-        {
-          "ticket": {
-            "custom_fields": [{ "id": this.childStatusFieldId(), "value": "child_status_" + this.ticket().status() }]
-          }
-        }
+        { "ticket": { "custom_fields": [{ "id": this.childStatusFieldId(), "value": "child_status_" + this.ticket().status() }] }}
       );
     },
 
