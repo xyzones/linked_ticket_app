@@ -400,17 +400,19 @@
     groupChanged: function(){
       var group_id = Number(this.formGroup());
 
-      if (!_.isFinite(group_id))
+      if (!_.isFinite(group_id)) {
         return this.formHideAssignee();
+      }
 
       this.spinnerOn();
 
-      this.paginateRequest('fetchUsersFromGroup', group_id)
+      this
+        .paginateRequest('fetchUsersFromGroup', group_id)
         .done(function(data){
           this.formShowAssignee();
           this.fillAssigneeWithCollection(data.users);
-        })
-        .always(function(){ this.spinnerOff(); });
+        }.bind(this))
+        .always(function(){ this.spinnerOff(); }.bind(this));
     },
 
     genericAjaxFailure: function(){
