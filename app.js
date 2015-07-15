@@ -154,9 +154,11 @@
         this.disableSubmit();
 
         this.ajax('createChildTicket', attributes)
+          .fail(function(){
+            this.enableSubmit();
+          })
           .always(function(){
             this.spinnerOff();
-            this.enableSubmit();
           });
       }
     },
