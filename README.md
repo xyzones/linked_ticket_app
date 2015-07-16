@@ -1,4 +1,5 @@
 ![](https://samson.zende.sk/projects/linked_ticket_app/stages/staging.svg?token=84457be797bb7a1e00d1f57575d5112a)
+![](https://samson.zende.sk/projects/linked_ticket_app/stages/production.svg?token=84457be797bb7a1e00d1f57575d5112a)
 
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning: 
 
