@@ -5,7 +5,7 @@
     "parameters": {
       "ancestry_field": {
         "label": "参考字段",
-        "helpText": "在这里放置一个自定义文本字段 ID 以储存链接工单参考数据。例如：2240041"
+        "helpText": "在这里放置一个自定义文本字段 ID 以储存已链接工单参考数据。例如：2240041"
       },
       "child_tag": {
         "label": "子标签",
@@ -70,19 +70,20 @@
       "status": {
         "new": "新建",
         "open": "已开启",
-        "pending": "未决",
+        "pending": "待回应",
         "hold": "暂停",
         "solved": "已解决",
         "closed": "已关闭"
       },
       "type": {
-        "problem": "事故",
-        "incident": "事件",
+        "problem": "故障",
+        "incident": "事务",
         "question": "问题",
         "task": "任务"
       }
     }
   },
   "delimiter": "原始描述",
-  "create_ticket": "创建工单"
+  "create_ticket": "创建工单",
+  "closed_warn": "父工单已关闭，无法进行修改。只有子工单能继续包含参考。"
 }

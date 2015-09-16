@@ -1,0 +1,89 @@
+{
+  "app": {
+    "description": "Creaţi şi legaţi un tichet dintr-unul existent",
+    "name": "Tichet legat",
+    "parameters": {
+      "ancestry_field": {
+        "label": "Câmp de referinţă",
+        "helpText": "Plasaţi aici identificatorul unui câmp de text personalizat pentru a stoca datele de referinţă ale tichetului legat. Exemplu: 2240041"
+      },
+      "child_tag": {
+        "label": "Etichetă secundară",
+        "helpText": "Această etichetă va fi adăugată la tichetul secundar creat. Exemplu: tichet_secundar"
+      }
+    }
+  },
+  "ajax_failure": "A apărut o eroare. Vă rugăm să încercaţi să reîncărcaţi aplicaţia.",
+  "ancestry_field_missing": "<strong>Aplicaţie Tichet legat:</strong> Aţi urmat instrucţiunile de configurare şi aţi configurat un câmp personalizat?",
+  "has_parent": "Acest tichet are un tichet principal.",
+  "has_child": "Acest tichet are un tichet secundar.",
+  "form": {
+    "subject": {
+      "label": "Subiect:"
+    },
+    "description": {
+      "label": "Descriere:"
+    },
+    "requester_email": {
+      "label": "E-mail solicitant"
+    },
+    "requester_name": {
+      "label": "Nume solicitant (Numai pentru solicitanţii noi)"
+    },
+    "group": {
+      "label": "Grup"
+    },
+    "requester": {
+      "label": "Solicitant:",
+      "current_user": "eu",
+      "ticket_requester": "solicitant tichet",
+      "custom": "altcineva"
+    },
+    "assignee": {
+      "label": "Responsabil desemnat:",
+      "current_user": "eu",
+      "ticket_assignee": "responsabil desemnat tichet",
+      "custom": "altcineva",
+      "group_label": "Grup responsabil desemnat",
+      "name_label": "Nume responsabil desemnat"
+    },
+    "copy_description": {
+      "label": "Copiere descriere curentă a tichetului"
+    },
+    "ccs": {
+      "label": "Destinatari incluşi în CC:"
+    },
+    "tags": {
+      "label": "Etichete:"
+    },
+    "submit": "Creare tichet",
+    "loading": "Se trimite..."
+  },
+  "ticket": {
+    "id": "Identificator",
+    "subject": "Subiect:",
+    "status": "Stare",
+    "type": "Tip",
+    "assignee": "Responsabil desemnat:",
+    "group": "Grup",
+    "values": {
+      "status": {
+        "new": "Nou",
+        "open": "Deschis",
+        "pending": "În aşteptare",
+        "hold": "Pauză",
+        "solved": "Rezolvat",
+        "closed": "Închis"
+      },
+      "type": {
+        "problem": "Problemă",
+        "incident": "Incident",
+        "question": "Întrebare",
+        "task": "Sarcină"
+      }
+    }
+  },
+  "delimiter": "Descriere originală",
+  "create_ticket": "Creaţi un tichet",
+  "closed_warn": "Tichetul principal este închis şi nu poate fi modificat. Numai tichetul secundar va continua să conţină o referinţă."
+}

@@ -1,0 +1,89 @@
+{
+  "app": {
+    "description": "Tworzenie zgłoszenia z istniejącego zgłoszenia i ich łączenie",
+    "name": "Powiązane zgłoszenie",
+    "parameters": {
+      "ancestry_field": {
+        "label": "Pole referencyjne",
+        "helpText": "Umieść tutaj identyfikator niestandardowego pola tekstowego do przechowywania danych referencyjnych aplikacji Powiązane zgłoszenie. Przykład: 2240041"
+      },
+      "child_tag": {
+        "label": "Tag zgłoszenia podrzędnego",
+        "helpText": "Ten tag będzie dodawany do utworzonego zgłoszenia podrzędnego. Przykład: zgłoszenie_podrzędne"
+      }
+    }
+  },
+  "ajax_failure": "Wystąpił błąd. Spróbuj załadować aplikację ponownie.",
+  "ancestry_field_missing": "<strong>Aplikacja Powiązane zgłoszenie:</strong> czy skonfigurowano pole niestandardowe zgodnie z instrukcją?",
+  "has_parent": "To zgłoszenie ma zgłoszenie nadrzędne.",
+  "has_child": "To zgłoszenie ma zgłoszenie podrzędne.",
+  "form": {
+    "subject": {
+      "label": "Temat:"
+    },
+    "description": {
+      "label": "Opis:"
+    },
+    "requester_email": {
+      "label": "Adres e-mail osoby zlecającej"
+    },
+    "requester_name": {
+      "label": "Nazwisko osoby zlecającej (dotyczy tylko nowych)"
+    },
+    "group": {
+      "label": "Grupa"
+    },
+    "requester": {
+      "label": "Osoba zlecająca:",
+      "current_user": "ja",
+      "ticket_requester": "osoba zlecająca zgłoszenie",
+      "custom": "inny"
+    },
+    "assignee": {
+      "label": "Opiekun:",
+      "current_user": "ja",
+      "ticket_assignee": "opiekun zgłoszenia",
+      "custom": "inny",
+      "group_label": "Grupa opiekuna",
+      "name_label": "Nazwisko opiekuna"
+    },
+    "copy_description": {
+      "label": "Kopiuj opis bieżącego zgłoszenia"
+    },
+    "ccs": {
+      "label": "DW:"
+    },
+    "tags": {
+      "label": "Tagi:"
+    },
+    "submit": "Utwórz zgłoszenie",
+    "loading": "Wysyłanie..."
+  },
+  "ticket": {
+    "id": "IDENTYFIKATOR",
+    "subject": "Temat:",
+    "status": "Status",
+    "type": "Typ",
+    "assignee": "Opiekun:",
+    "group": "Grupa",
+    "values": {
+      "status": {
+        "new": "Nowe",
+        "open": "Przypisane",
+        "pending": "Oczekujące",
+        "hold": "Wstrzymane",
+        "solved": "Załatwione",
+        "closed": "Zamknięte"
+      },
+      "type": {
+        "problem": "Problem",
+        "incident": "Zdarzenie",
+        "question": "Pytanie",
+        "task": "Zadanie"
+      }
+    }
+  },
+  "delimiter": "Opis oryginalny",
+  "create_ticket": "Utwórz zgłoszenie",
+  "closed_warn": "Zgłoszenie nadrzędne zostało zamknięte i nie można go zmodyfikować. Tylko zgłoszenie podrzędne będzie nadal zawierać dane referencyjne."
+}

@@ -1,0 +1,89 @@
+{
+  "app": {
+    "description": "Vytvořte a propojte tiket z existujícího tiketu",
+    "name": "Propojený tiket",
+    "parameters": {
+      "ancestry_field": {
+        "label": "Referenční pole",
+        "helpText": "Sem umístěte ID vlastního textového pole, do kterého chcete ukládat referenční data propojeného tiketu. Příklad: 2240041"
+      },
+      "child_tag": {
+        "label": "Podřízený štítek",
+        "helpText": "Tento štítek bude přidán do vytvořeného podřízeného tiketu. Příklad: podřízený_tiket"
+      }
+    }
+  },
+  "ajax_failure": "Došlo k chybě. Zkuste prosím aplikaci znovu načíst.",
+  "ancestry_field_missing": "<strong>Aplikace Propojený tiket:</strong> Postupovali jste podle pokynů pro nastavení a vytvořili jste vlastní pole?",
+  "has_parent": "Tento tiket má nadřazený tiket.",
+  "has_child": "Tento tiket má podřízený tiket.",
+  "form": {
+    "subject": {
+      "label": "Předmět:"
+    },
+    "description": {
+      "label": "Popis:"
+    },
+    "requester_email": {
+      "label": "E-mail klienta"
+    },
+    "requester_name": {
+      "label": "Jméno klienta (pouze pro nové klienty)"
+    },
+    "group": {
+      "label": "Skupina"
+    },
+    "requester": {
+      "label": "Klient:",
+      "current_user": "já",
+      "ticket_requester": "klient tiketu",
+      "custom": "jiný"
+    },
+    "assignee": {
+      "label": "Pověřený agent:",
+      "current_user": "já",
+      "ticket_assignee": "pověřený agent pro tiket",
+      "custom": "jiný",
+      "group_label": "Skupina pověřeného agenta",
+      "name_label": "Jméno pověřeného agenta"
+    },
+    "copy_description": {
+      "label": "Kopírovat aktuální popis tiketu"
+    },
+    "ccs": {
+      "label": "Příjemci kopie:"
+    },
+    "tags": {
+      "label": "Štítky:"
+    },
+    "submit": "Vytvořit tiket",
+    "loading": "Odesílání..."
+  },
+  "ticket": {
+    "id": "ID",
+    "subject": "Předmět:",
+    "status": "Stav",
+    "type": "Typ",
+    "assignee": "Pověřený agent:",
+    "group": "Skupina",
+    "values": {
+      "status": {
+        "new": "Nový",
+        "open": "Otevřený",
+        "pending": "Čekající",
+        "hold": "Pozastavený",
+        "solved": "Vyřešený",
+        "closed": "Uzavřený"
+      },
+      "type": {
+        "problem": "Problém",
+        "incident": "Incident",
+        "question": "Otázka",
+        "task": "Úkol"
+      }
+    }
+  },
+  "delimiter": "Původní popis",
+  "create_ticket": "Vytvořit tiket",
+  "closed_warn": "Nadřazený tiket je uzavřený a nelze jej změnit. Pouze podřízený tiket bude i nadále obsahovat odkaz."
+}

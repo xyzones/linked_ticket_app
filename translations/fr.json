@@ -1,7 +1,7 @@
 {
   "app": {
     "description": "Créer et lier un ticket à partir d’un ticket existant",
-    "name": "Linked Ticket",
+    "name": "Ticket lié",
     "parameters": {
       "ancestry_field": {
         "label": "Champ de référence",
@@ -14,7 +14,7 @@
     }
   },
   "ajax_failure": "Une erreur est survenue. Essayez de recharger l’application.",
-  "ancestry_field_missing": "<strong>Application Linked Ticket :</strong> Avez-vous suivi les instructions de configuration et défini un champ personnalisé ?",
+  "ancestry_field_missing": "<strong>Application Ticket lié :</strong> Avez-vous suivi les instructions de configuration et défini un champ personnalisé ?",
   "has_parent": "Ce ticket a un ticket parent.",
   "has_child": "Ce ticket a un ticket enfant.",
   "form": {
@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Description d’origine",
-  "create_ticket": "Créer un ticket"
+  "create_ticket": "Créer un ticket",
+  "closed_warn": "Le ticket parent est clos et ne peut pas être modifié. Seul le ticket enfant continuera de contenir une référence."
 }

@@ -9,7 +9,7 @@
       },
       "child_tag": {
         "label": "Etiqueta secundaria",
-        "helpText": "Esta etiqueta se agregará al ticket secundario creado. Ejemplo: ticket_secundario"
+        "helpText": "Esta etiqueta se añadirá al ticket secundario creado. Ejemplo: ticket_secundario"
       }
     }
   },

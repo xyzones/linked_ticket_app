@@ -5,7 +5,7 @@
     "parameters": {
       "ancestry_field": {
         "label": "참조 필드",
-        "helpText": "연결된 티켓 참조 데이터를 저장하려면 여기에 사용자 지정 텍스트 필드 ID를 놓습니다. 예: 2240041"
+        "helpText": "연결된 티켓 참조 데이터를 저장하려면 여기에 사용자 지정 텍스트 필드 아이디를 놓습니다. 예: 2240041"
       },
       "child_tag": {
         "label": "하위 태그",
@@ -13,7 +13,7 @@
       }
     }
   },
-  "ajax_failure": "오류가 발생했습니다. 앱을 다시 로드하십시오.",
+  "ajax_failure": "오류가 발생했습니다. 앱을 다시 로드하세요.",
   "ancestry_field_missing": "<strong>연결된 티켓 앱:</strong> 설정에 관한 지침에 따라 사용자 지정 필드를 설정했습니까?",
   "has_parent": "이 티켓에는 상위 티켓이 있습니다.",
   "has_child": "이 티켓에는 하위 티켓이 있습니다.",
@@ -60,7 +60,7 @@
     "loading": "제출 중..."
   },
   "ticket": {
-    "id": "ID",
+    "id": "아이디",
     "subject": "제목:",
     "status": "상태",
     "type": "유형",
@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "원래 설명",
-  "create_ticket": "티켓 만들기"
+  "create_ticket": "티켓 만들기",
+  "closed_warn": "상위 티켓이 종료되어 수정할 수 없습니다. 하위 티켓에만 계속하여 참조가 포함됩니다."
 }

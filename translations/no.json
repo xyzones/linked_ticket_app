@@ -1,11 +1,11 @@
 {
   "app": {
     "description": "Opprett og koble til en sak fra en eksisterende sak",
-    "name": "Tilkoblet sak",
+    "name": "Tilknyttet sak",
     "parameters": {
       "ancestry_field": {
         "label": "Referansefelt",
-        "helpText": "Plasser en egendefinert tekstfelt-ID her for å lagre referansedata for den tilkoblede saken. Eksempel: 2240041"
+        "helpText": "Plasser en egendefinert tekstfelt-ID her for å lagre referansedata for Tilknyttet sak. Eksempel: 2240041"
       },
       "child_tag": {
         "label": "Tagg for underordnet sak",
@@ -14,7 +14,7 @@
     }
   },
   "ajax_failure": "Det oppstod en feil. Prøv å laste appen på nytt.",
-  "ancestry_field_missing": "<strong>Tilkoblet saksapp:</strong>Fulgte du installeringsanvisningene og konfigurerte et egendefinert felt?",
+  "ancestry_field_missing": "<strong>Appen Tilknyttet sak:</strong>Fulgte du installeringsanvisningene og konfigurerte et egendefinert felt?",
   "has_parent": "Denne saken har en overordnet sak.",
   "has_child": "Denne saken har en underordnet sak.",
   "form": {
@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Opprinnelig beskrivelse",
-  "create_ticket": "Opprett sak"
+  "create_ticket": "Opprett sak",
+  "closed_warn": "Den overordnede saken er avsluttet og kan ikke modifiseres. Det er kun den underordnede saken som fortsatt vil ha en referanse."
 }

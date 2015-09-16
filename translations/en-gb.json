@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Original Description",
-  "create_ticket": "Create a ticket"
+  "create_ticket": "Create a ticket",
+  "closed_warn": "The parent ticket is closed and cannot be modified. Only the child ticket will continue to contain a reference."
 }

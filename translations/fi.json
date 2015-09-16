@@ -1,0 +1,89 @@
+{
+  "app": {
+    "description": "Luo ja linkitä tiketti olemassa olevaan",
+    "name": "Linkitetty tiketti",
+    "parameters": {
+      "ancestry_field": {
+        "label": "Viitekenttä",
+        "helpText": "Sijoita mukautetun tekstikentän tunnus tähän säilyttääksesi linkitetyn tiketin viitetiedot. Esimerkki: 2240041"
+      },
+      "child_tag": {
+        "label": "Ala-avainsana",
+        "helpText": "Tämä avainsana lisätään luotuun alatikettiin. Esimerkki: child_ticket"
+      }
+    }
+  },
+  "ajax_failure": "Tapahtui virhe. Yritä ladata sovellus uudelleen.",
+  "ancestry_field_missing": "<strong>Linkitetty tikettisovellus:</strong> Noudatitko asennusohjeita ja määrititkö mukautetun kentän?",
+  "has_parent": "Tämä tiketti on päätiketti.",
+  "has_child": "Tämä tiketti on alatiketti.",
+  "form": {
+    "subject": {
+      "label": "Aihe:"
+    },
+    "description": {
+      "label": "Kuvaus:"
+    },
+    "requester_email": {
+      "label": "Lähettäjän sähköpostiosoite"
+    },
+    "requester_name": {
+      "label": "Lähettäjän nimi (vain uusille lähettäjille)"
+    },
+    "group": {
+      "label": "Ryhmä"
+    },
+    "requester": {
+      "label": "Lähettäjä:",
+      "current_user": "minä",
+      "ticket_requester": "tiketin lähettäjä",
+      "custom": "muu"
+    },
+    "assignee": {
+      "label": "Käsittelijä:",
+      "current_user": "minä",
+      "ticket_assignee": "tiketin käsittelijä",
+      "custom": "muu",
+      "group_label": "Käsittelijäryhmä",
+      "name_label": "Käsittelijän nimi"
+    },
+    "copy_description": {
+      "label": "Kopioi nykyisen tiketin kuvaus"
+    },
+    "ccs": {
+      "label": "Kopiot:"
+    },
+    "tags": {
+      "label": "Avainsanat:"
+    },
+    "submit": "Luo tiketti",
+    "loading": "Lähettää..."
+  },
+  "ticket": {
+    "id": "Tunnus",
+    "subject": "Aihe:",
+    "status": "Tila",
+    "type": "Tyyppi",
+    "assignee": "Käsittelijä:",
+    "group": "Ryhmä",
+    "values": {
+      "status": {
+        "new": "Uusi",
+        "open": "Avattu",
+        "pending": "Odottaa",
+        "hold": "Pidossa",
+        "solved": "Ratkaistu",
+        "closed": "Suljettu"
+      },
+      "type": {
+        "problem": "Ongelma",
+        "incident": "Tapahtuma",
+        "question": "Kysymys",
+        "task": "Tehtävä"
+      }
+    }
+  },
+  "delimiter": "Alkuperäinen kuvaus",
+  "create_ticket": "Luo tiketti",
+  "closed_warn": "Päätiketti on suljettu, eikä sitä voi muokata. Vain alatiketti sisältää jatkossa viitteen."
+}

@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Descrição original",
-  "create_ticket": "Criar um ticket"
+  "create_ticket": "Criar um ticket",
+  "closed_warn": "O ticket pai está fechado e não pode ser modificado. Apenas o ticket filho continuará a conter a referência."
 }

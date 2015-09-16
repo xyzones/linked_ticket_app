@@ -232,6 +232,6 @@
   },
   "closed_warn": {
     "title": "A warning that the current ticket is closed and cannot reference the child",
-    "value": "This ticket is closed and cannot be linked."
+    "value": "The parent ticket is closed and cannot be modified. Only the child ticket will continue to contain a reference."
   }
 }
