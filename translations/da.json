@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Original beskrivelse",
-  "create_ticket": "Opret en ticket"
+  "create_ticket": "Opret en ticket",
+  "closed_warn": "Den overordnede ticket er lukket og kan ikke ændres. Kun den underordnede ticket vil fortsætte med at indeholde en henvisning."
 }

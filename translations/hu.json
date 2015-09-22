@@ -1,0 +1,89 @@
+{
+  "app": {
+    "description": "Hozzon létre és kapcsoljon egy létező jegyet",
+    "name": "Csatolt jegy",
+    "parameters": {
+      "ancestry_field": {
+        "label": "Hivatkozás mező",
+        "helpText": "Helyezzen egy egyéni szövegmező azonosítót ide, hogy eltárolja a Csatolt Jegy referenciaadatait. Például: 2240041"
+      },
+      "child_tag": {
+        "label": "Child Tag",
+        "helpText": "Ez a címke hozzá lesz adva a létrehozott aljegyhez. Például: child_ticket"
+      }
+    }
+  },
+  "ajax_failure": "Hiba történt. Kérjük próbálja meg újraindítani az alkalmazást.",
+  "ancestry_field_missing": "<strong>Csatolt Jegy Alkalmazás</strong> Követte a beállítási instrukciókat és beállított egy egyedi mezőt?",
+  "has_parent": "Ez a jegy egy főjegy.",
+  "has_child": "Ez a jegy egy aljegy.",
+  "form": {
+    "subject": {
+      "label": "Tárgy:"
+    },
+    "description": {
+      "label": "Leírás:"
+    },
+    "requester_email": {
+      "label": "Kérvényező e-mail"
+    },
+    "requester_name": {
+      "label": "Kérelmező neve (csak új felhasználóknál szükséges)"
+    },
+    "group": {
+      "label": "Csoport"
+    },
+    "requester": {
+      "label": "Kérelmező:",
+      "current_user": "Én",
+      "ticket_requester": "jegy kérvényező",
+      "custom": "Másik"
+    },
+    "assignee": {
+      "label": "Illetékes:",
+      "current_user": "Én",
+      "ticket_assignee": "jegy illetékes",
+      "custom": "Másik",
+      "group_label": "Illetékes csoport",
+      "name_label": "Illetékes neve"
+    },
+    "copy_description": {
+      "label": "Jelenlegi jegy leírás másolása"
+    },
+    "ccs": {
+      "label": "Másolatot kapnak:"
+    },
+    "tags": {
+      "label": "Címkék:"
+    },
+    "submit": "Jegy létrehozása",
+    "loading": "Beküldés..."
+  },
+  "ticket": {
+    "id": "azonosító",
+    "subject": "Tárgy:",
+    "status": "Állapot",
+    "type": "Típus",
+    "assignee": "Illetékes:",
+    "group": "Csoport",
+    "values": {
+      "status": {
+        "new": "Új",
+        "open": "Nyitott",
+        "pending": "Függőben",
+        "hold": "Tartás",
+        "solved": "Megoldva",
+        "closed": "Bezárva"
+      },
+      "type": {
+        "problem": "Probléma",
+        "incident": "Incidens",
+        "question": "Kérdés",
+        "task": "Feladat"
+      }
+    }
+  },
+  "delimiter": "Eredeti leírás",
+  "create_ticket": "Hozzon létre egy jegyet",
+  "closed_warn": "A forrásjegy törlésre került és már nem módosítható, csak az ebből származó jegy marad meg hivatkozási alapnak."
+}

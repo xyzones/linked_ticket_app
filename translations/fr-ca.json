@@ -1,11 +1,11 @@
 {
   "app": {
     "description": "Créer et lier un billet à partir d’un billet existant",
-    "name": "Linked Billet",
+    "name": "Billet lié",
     "parameters": {
       "ancestry_field": {
         "label": "Champ de référence",
-        "helpText": "Placez un ID de champ texte personnalisé pour stocker les données de référence Linked Billet. Exemple : 2240041"
+        "helpText": "Placez un ID de champ texte personnalisé pour stocker les données de référence billet lié. Exemple : 2240041"
       },
       "child_tag": {
         "label": "Marqueur enfant",
@@ -14,7 +14,7 @@
     }
   },
   "ajax_failure": "Une erreur est survenue. Essayez de recharger l’application.",
-  "ancestry_field_missing": "<strong>Application Linked Billet :</strong> Avez-vous suivi les instructions de configuration et défini un champ personnalisé ?",
+  "ancestry_field_missing": "<strong>Application Billet lié :</strong> Avez-vous suivi les instructions de configuration et défini un champ personnalisé ?",
   "has_parent": "Ce billet a un billet parent.",
   "has_child": "Ce billet a un billet enfant.",
   "form": {
@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Description d’origine",
-  "create_ticket": "Créer un ticket"
+  "create_ticket": "Créer un billet",
+  "closed_warn": "Le billet parent est clos et ne peut pas être modifié. Seul le billet enfant continuera de contenir une référence."
 }

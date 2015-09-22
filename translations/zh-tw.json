@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "原描述",
-  "create_ticket": "建立工單"
+  "create_ticket": "建立工單",
+  "closed_warn": "父工單已關閉，不能修改。僅子工單可繼續含有參考。"
 }

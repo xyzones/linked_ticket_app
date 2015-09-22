@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Ursprüngliche Beschreibung",
-  "create_ticket": "Ticket erstellen"
+  "create_ticket": "Ticket erstellen",
+  "closed_warn": "Das übergeordnete Ticket ist geschlossen und kann nicht geändert werden. Nur das untergeordnete Ticket enthält auch weiterhin einen Bezug."
 }

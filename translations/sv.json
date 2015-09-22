@@ -1,88 +1,89 @@
 {
   "app": {
-    "description": "Create and link a ticket from an existing one",
-    "name": "Linked Ticket",
+    "description": "Skapa och länka ett ärende från ett befintligt ärende.",
+    "name": "Länkat ärende",
     "parameters": {
       "ancestry_field": {
-        "label": "Reference Field",
-        "helpText": "Place a custom text field ID here to store the Linked Ticket reference data. Example : 2240041"
+        "label": "Referensfält",
+        "helpText": "Placera ett eget textfält-ID här för att lagra referensdata för Länkat ärende. Exempel: 2240041"
       },
       "child_tag": {
-        "label": "Child Tag",
-        "helpText": "This tag will be added to the created child ticket. Example : child_ticket"
+        "label": "Underordnad tagg",
+        "helpText": "Denna tagg kommer att läggas till i det skapade underordnade ärendet. Exempel: child_ticket"
       }
     }
   },
-  "ajax_failure": "An error occurred. Please try reloading the app.",
-  "ancestry_field_missing": "<strong>Linked Ticket App:</strong> Did you follow the set up instructions and set up a custom field?",
-  "has_parent": "This ticket has a parent ticket.",
-  "has_child": "This ticket has a child ticket.",
+  "ajax_failure": "Ett fel inträffade. Försök läsa in appen på nytt.",
+  "ancestry_field_missing": "<strong>Länkat ärende:</strong> Följde du installationsanvisningarna och ställde in ett eget fält?",
+  "has_parent": "Detta ärende har ett överordnat ärende.",
+  "has_child": "Detta ärende har ett underordnat ärende.",
   "form": {
     "subject": {
-      "label": "Subject:"
+      "label": "Ämne:"
     },
     "description": {
-      "label": "Description:"
+      "label": "Beskrivning:"
     },
     "requester_email": {
-      "label": "Requester Email"
+      "label": "Frågeställarens e-postadress"
     },
     "requester_name": {
-      "label": "Requester Name (For new requesters only)"
+      "label": "Frågeställarens namn (endast för nya frågeställare)"
     },
     "group": {
-      "label": "Group"
+      "label": "Grupp"
     },
     "requester": {
-      "label": "Requester:",
-      "current_user": "me",
-      "ticket_requester": "ticket requester",
-      "custom": "other"
+      "label": "Frågeställare:",
+      "current_user": "jag",
+      "ticket_requester": "ärendets frågeställare",
+      "custom": "annan"
     },
     "assignee": {
-      "label": "Assignee:",
-      "current_user": "me",
-      "ticket_assignee": "ticket assignee",
-      "custom": "other",
-      "group_label": "Assignee group",
-      "name_label": "Assignee name"
+      "label": "Handläggare:",
+      "current_user": "jag",
+      "ticket_assignee": "ärendets handläggare",
+      "custom": "annan",
+      "group_label": "Handläggargrupp",
+      "name_label": "Handläggarens namn"
     },
     "copy_description": {
-      "label": "Copy current ticket description"
+      "label": "Kopiera det aktuella ärendets beskrivning"
     },
     "ccs": {
-      "label": "CCs:"
+      "label": "Kopia:"
     },
     "tags": {
-      "label": "Tags:"
+      "label": "Taggar:"
     },
-    "submit": "Create Ticket",
-    "loading": "Submitting..."
+    "submit": "Skapa ärende",
+    "loading": "Skickar..."
   },
   "ticket": {
     "id": "ID",
-    "subject": "Subject:",
+    "subject": "Ämne:",
     "status": "Status",
-    "type": "Type",
-    "assignee": "Assignee:",
-    "group": "Group",
+    "type": "Typ",
+    "assignee": "Handläggare:",
+    "group": "Grupp",
     "values": {
       "status": {
-        "new": "New",
-        "open": "Open",
-        "pending": "Pending",
-        "hold": "Hold",
-        "solved": "Solved",
-        "closed": "Closed"
+        "new": "Nytt",
+        "open": "Öppet",
+        "pending": "Väntar",
+        "hold": "Parkerat",
+        "solved": "Löst",
+        "closed": "Stängt"
       },
       "type": {
         "problem": "Problem",
-        "incident": "Incident",
-        "question": "Question",
-        "task": "Task"
+        "incident": "Händelse",
+        "question": "Fråga",
+        "task": "Uppgift"
       }
     }
   },
-  "delimiter": "Original Description",
-  "create_ticket": "Create a ticket"
+  "delimiter": "Ursprunglig beskrivning",
+  "create_ticket": "Skapa ett ärende",
+  "closed_warn": "Det överordnade ärendet är stängt och kan inte ändras. En referens kommer endast att finnas i det underordnade ärendet."
 }

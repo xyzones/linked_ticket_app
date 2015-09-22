@@ -1,88 +1,89 @@
 {
   "app": {
-    "description": "Create and link a ticket from an existing one",
-    "name": "Linked Ticket",
+    "description": "Mevcut kayıttan bir kayıt oluşturun ve bir kayıt bağlayın",
+    "name": "Bağlantılı Kayıt",
     "parameters": {
       "ancestry_field": {
-        "label": "Reference Field",
-        "helpText": "Place a custom text field ID here to store the Linked Ticket reference data. Example : 2240041"
+        "label": "Referans Alanı",
+        "helpText": "Bağlı Kayıt referans verilerini saklamak için buraya bir özel metin alanı yerleştirin. Örnek: 2240041"
       },
       "child_tag": {
-        "label": "Child Tag",
-        "helpText": "This tag will be added to the created child ticket. Example : child_ticket"
+        "label": "Alt Etiket",
+        "helpText": "Bu etiket oluşturulan alt kayda eklenecektir. Örnek: alt_kayıt"
       }
     }
   },
-  "ajax_failure": "An error occurred. Please try reloading the app.",
-  "ancestry_field_missing": "<strong>Linked Ticket App:</strong> Did you follow the set up instructions and set up a custom field?",
-  "has_parent": "This ticket has a parent ticket.",
-  "has_child": "This ticket has a child ticket.",
+  "ajax_failure": "Bir hata oluştu. Lütfen uygulamayı yeniden yüklemeyi deneyin.",
+  "ancestry_field_missing": "<strong>Bağlı Kayıt Uygulaması:</strong> Kurulum talimatlarını izleyip, özel bir alan kurdunuz mu?",
+  "has_parent": "Bu kaydın bir ana kaydı var.",
+  "has_child": "Bu kaydın bir alt kaydı var.",
   "form": {
     "subject": {
-      "label": "Subject:"
+      "label": "Konu:"
     },
     "description": {
-      "label": "Description:"
+      "label": "Açıklama:"
     },
     "requester_email": {
-      "label": "Requester Email"
+      "label": "Talep Eden E-postası"
     },
     "requester_name": {
-      "label": "Requester Name (For new requesters only)"
+      "label": "Talep Eden Kişinin Adı (Sadece yeni talep edenler için)"
     },
     "group": {
-      "label": "Group"
+      "label": "Grup"
     },
     "requester": {
-      "label": "Requester:",
-      "current_user": "me",
-      "ticket_requester": "ticket requester",
-      "custom": "other"
+      "label": "Talep Eden:",
+      "current_user": "ben",
+      "ticket_requester": "kaydı talep eden",
+      "custom": "diğer"
     },
     "assignee": {
-      "label": "Assignee:",
-      "current_user": "me",
-      "ticket_assignee": "ticket assignee",
-      "custom": "other",
-      "group_label": "Assignee group",
-      "name_label": "Assignee name"
+      "label": "Atanan:",
+      "current_user": "ben",
+      "ticket_assignee": "kaydın atandığı kişi",
+      "custom": "diğer",
+      "group_label": "Atanan grubu",
+      "name_label": "Atanan adı"
     },
     "copy_description": {
-      "label": "Copy current ticket description"
+      "label": "Mevcut kayıt açıklamasını kopyala"
     },
     "ccs": {
-      "label": "CCs:"
+      "label": "Bilgilendirilenler:"
     },
     "tags": {
-      "label": "Tags:"
+      "label": "Etiketler:"
     },
-    "submit": "Create Ticket",
-    "loading": "Submitting..."
+    "submit": "Kayıt Oluştur",
+    "loading": "Gönderiliyor..."
   },
   "ticket": {
-    "id": "ID",
-    "subject": "Subject:",
-    "status": "Status",
-    "type": "Type",
-    "assignee": "Assignee:",
-    "group": "Group",
+    "id": "No",
+    "subject": "Konu:",
+    "status": "Durum",
+    "type": "Tür",
+    "assignee": "Atanan:",
+    "group": "Grup",
     "values": {
       "status": {
-        "new": "New",
-        "open": "Open",
-        "pending": "Pending",
-        "hold": "Hold",
-        "solved": "Solved",
-        "closed": "Closed"
+        "new": "Yeni",
+        "open": "Açık",
+        "pending": "Beklemede",
+        "hold": "Askıda ",
+        "solved": "Çözüldü",
+        "closed": "Kapalı"
       },
       "type": {
         "problem": "Problem",
-        "incident": "Incident",
-        "question": "Question",
-        "task": "Task"
+        "incident": "Vaka",
+        "question": "Soru",
+        "task": "Görev"
       }
     }
   },
-  "delimiter": "Original Description",
-  "create_ticket": "Create a ticket"
+  "delimiter": "Orijinal Açıklama",
+  "create_ticket": "Bir kayıt oluştur",
+  "closed_warn": "Ana kayıt kapalı; üzerinde değişiklik yapılamaz. Yalnızca alt kayıt bir referans içermeye devam edecek."
 }

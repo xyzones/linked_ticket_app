@@ -8,15 +8,15 @@
         "helpText": "Inserisci un ID del campo testo personalizzato qui per memorizzare i dati di riferimento del ticket collegato. Esempio: 2240041"
       },
       "child_tag": {
-        "label": "Tag figlio",
-        "helpText": "Questo tag verrà aggiunto al ticket figlio creato. Esempio: ticket_figlio"
+        "label": "Tag secondario",
+        "helpText": "Questo tag verrà aggiunto al ticket secondario creato. Esempio: ticket_secondario"
       }
     }
   },
   "ajax_failure": "Si è verificato un errore. Prova a caricare di nuovo l’app.",
   "ancestry_field_missing": "<strong>App ticket collegato:</strong> Hai seguito le istruzioni per l’impostazione definendo un campo personalizzato?",
-  "has_parent": "Questo ticket ha un ticket padre.",
-  "has_child": "Questo ticket ha un ticket figlio.",
+  "has_parent": "Questo ticket ha un ticket principale.",
+  "has_child": "Questo ticket ha un ticket secondario.",
   "form": {
     "subject": {
       "label": "Oggetto:"
@@ -25,7 +25,7 @@
       "label": "Descrizione:"
     },
     "requester_email": {
-      "label": "E-mail richiedente"
+      "label": "Email richiedente"
     },
     "requester_name": {
       "label": "Nome richiedente (solo per nuovi richiedenti)"
@@ -71,7 +71,7 @@
         "new": "Nuovo",
         "open": "Aperto",
         "pending": "In attesa",
-        "hold": "In attesa",
+        "hold": "In sospeso",
         "solved": "Risolto",
         "closed": "Chiuso"
       },
@@ -84,5 +84,6 @@
     }
   },
   "delimiter": "Descrizione originale",
-  "create_ticket": "Crea un ticket"
+  "create_ticket": "Crea un ticket",
+  "closed_warn": "Il ticket principale è chiuso e non può essere modificato. Solo il ticket secondario continuerà a contenere un riferimento."
 }
