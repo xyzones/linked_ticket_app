@@ -194,6 +194,10 @@ parts:
       title: "This is a placeholder text marking the different between the new text and the old one"
       value: "Original Description"
   - translation:
+      key: "txt.apps.linked_ticket_app.forbidden"
+      title: "when the user does not have access to see the linked ticket"
+      value: "You are not authorized to view this linked ticket."
+  - translation:
       key: "txt.apps.linked_ticket_app.create_ticket"
       title: "empty"
       value: "Create a ticket"
