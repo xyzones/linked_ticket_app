@@ -1,11 +1,19 @@
-{{#if closed_warn}}
-  <div class="alert alert-danger">{{t "closed_warn"}}</div>
-{{/if}}
-<div class="well">
-  <div class="row-fluid centered">
-    <a class="new-linked-ticket btn btn-success btn-large"
-       {{#if closed_warn}}disabled="disabled"{{/if}}>
-      {{t "create_ticket"}}
-    </a>
+{{#if forbidden}}
+  <div class="well">
+    <div class="row-fluid centered">
+      {{t "forbidden"}}
+    </div>
   </div>
-</div>
+{{else}}
+  {{#if closed_warn}}
+    <div class="alert alert-danger">{{t "closed_warn"}}</div>
+  {{/if}}
+  <div class="well">
+    <div class="row-fluid centered">
+      <a class="new-linked-ticket btn btn-success btn-large"
+         {{#if closed_warn}}disabled="disabled"{{/if}}>
+        {{t "create_ticket"}}
+      </a>
+    </div>
+  </div>
+{{/if}}

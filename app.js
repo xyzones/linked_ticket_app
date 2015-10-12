@@ -115,9 +115,10 @@
       return this.ticket().status() == "closed";
     },
 
-    displayHome: function(){
+    displayHome: function(data){
       this.switchTo('home', {
-        closed_warn: this.ticketIsClosed()
+        closed_warn: this.ticketIsClosed(),
+        forbidden: data && data.status === 403
       });
     },
 
