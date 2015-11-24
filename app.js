@@ -17,6 +17,7 @@
       'autocompleteRequester.fail'      : 'genericAjaxFailure',
       'fetchGroups.fail'                : 'genericAjaxFailure',
       'fetchUsersFromGroup.fail'        : 'genericAjaxFailure',
+
       // DOM EVENTS
       'click .new-linked-ticket'        : 'displayForm',
       'click .create-linked-ticket'     : 'create',
@@ -355,7 +356,7 @@
     },
 
     copyDescription: function(){
-      var descriptionDelimiter = helpers.fmt("\n--- %@ --- \n", this.I18n.t("delimiter"));
+      var descriptionDelimiter = this.ticket().comment().useRichText() ? helpers.fmt("<br />--- %@ ---<br />", this.I18n.t("delimiter")) : helpers.fmt("\n--- %@ --- \n", this.I18n.t("delimiter"));
       var description = this.formDescription()
         .split(descriptionDelimiter);
 
@@ -427,11 +428,21 @@
     childTicketAttributes: function(){
       var params = {
         "subject": this.formSubject(),
-        "comment": { "body": this.formDescription() },
+        "comment": {
+          "body": this.formDescription()
+        },
         "custom_fields": [
-          { id: this.ancestryFieldId(), value: 'child_of:' + this.ticket().id() }
+          {
+            id: this.ancestryFieldId(),
+            value: 'child_of:' + this.ticket().id()
+          }
         ]
       };
+
+      if (this.ticket().comment().useRichText()){
+        delete params.comment.body;
+        params.comment.html_body = this.formDescription();
+      }
 
       _.extend(params,
                this.serializeRequesterAttributes(),
