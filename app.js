@@ -428,9 +428,7 @@
     childTicketAttributes: function(){
       var params = {
         "subject": this.formSubject(),
-        "comment": {
-          "body": this.formDescription()
-        },
+        "comment": {},
         "custom_fields": [
           {
             id: this.ancestryFieldId(),
@@ -439,10 +437,7 @@
         ]
       };
 
-      if (this.ticket().comment().useRichText()){
-        delete params.comment.body;
-        params.comment.html_body = this.formDescription();
-      }
+      params.comment[this.ticket().comment().useRichText() ? 'html_body' : 'body'] = this.formDescription();
 
       _.extend(params,
                this.serializeRequesterAttributes(),
