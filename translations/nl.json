@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Oorspronkelijke beschrijving",
+  "forbidden": "U bent niet gemachtigd dit gekoppelde ticket te bekijken.",
   "create_ticket": "Een ticket maken",
   "closed_warn": "Het bovenliggende ticket is gesloten en kan niet worden aangepast. Alleen het onderliggende ticket behoudt een verwijzing."
 }

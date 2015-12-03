@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Orijinal Açıklama",
+  "forbidden": "Bu bağlantılı kaydı görüntüleme yetkiniz yok.",
   "create_ticket": "Bir kayıt oluştur",
   "closed_warn": "Ana kayıt kapalı; üzerinde değişiklik yapılamaz. Yalnızca alt kayıt bir referans içermeye devam edecek."
 }

@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Description d’origine",
+  "forbidden": "Vous n’êtes pas autorisé à consulter ce ticket lié.",
   "create_ticket": "Créer un billet",
   "closed_warn": "Le billet parent est clos et ne peut pas être modifié. Seul le billet enfant continuera de contenir une référence."
 }
