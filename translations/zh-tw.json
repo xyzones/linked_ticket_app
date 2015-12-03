@@ -31,7 +31,7 @@
       "label": "請求者名稱（僅限新請求者）"
     },
     "group": {
-      "label": "組"
+      "label": "小組"
     },
     "requester": {
       "label": "請求者：",
@@ -65,7 +65,7 @@
     "status": "狀態",
     "type": "類型",
     "assignee": "受託人：",
-    "group": "組",
+    "group": "小組",
     "values": {
       "status": {
         "new": "新建",
@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "原描述",
+  "forbidden": "您無權檢視此已連結工單。",
   "create_ticket": "建立工單",
   "closed_warn": "父工單已關閉，不能修改。僅子工單可繼續含有參考。"
 }
