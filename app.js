@@ -362,7 +362,7 @@
       var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
       var formDescription = this.formDescription()
         .split(descriptionDelimiter);
-     var ticketDescription = useRichText ? this.convertLineBreaksToHtml(ticketDescription) : ticketDescription;
+      ticketDescription = useRichText ? this.convertLineBreaksToHtml(ticketDescription) : ticketDescription;
 
       var ret = formDescription[0];
 
