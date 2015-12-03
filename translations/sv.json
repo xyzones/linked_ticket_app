@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Ursprunglig beskrivning",
+  "forbidden": "Du har inte behörighet att visa detta länkade ärende.",
   "create_ticket": "Skapa ett ärende",
   "closed_warn": "Det överordnade ärendet är stängt och kan inte ändras. En referens kommer endast att finnas i det underordnade ärendet."
 }

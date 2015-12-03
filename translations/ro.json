@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Descriere originală",
+  "forbidden": "Nu sunteţi autorizat(ă) să vizualizaţi acest tichet legat.",
   "create_ticket": "Creaţi un tichet",
   "closed_warn": "Tichetul principal este închis şi nu poate fi modificat. Numai tichetul secundar va continua să conţină o referinţă."
 }

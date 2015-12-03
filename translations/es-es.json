@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Descripción original",
+  "forbidden": "No tiene autorización para ver este ticket vinculado.",
   "create_ticket": "Crear un ticket",
   "closed_warn": "El ticket principal está cerrado y no se puede modificar. Solo el ticket secundario seguirá teniendo una referencia."
 }

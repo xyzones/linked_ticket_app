@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Opis oryginalny",
+  "forbidden": "Nie masz autoryzacji do wyświetlenia tego powiązanego zgłoszenia.",
   "create_ticket": "Utwórz zgłoszenie",
   "closed_warn": "Zgłoszenie nadrzędne zostało zamknięte i nie można go zmodyfikować. Tylko zgłoszenie podrzędne będzie nadal zawierać dane referencyjne."
 }

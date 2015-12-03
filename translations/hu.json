@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Eredeti leírás",
+  "forbidden": "You are not authorized to view this linked ticket.",
   "create_ticket": "Hozzon létre egy jegyet",
   "closed_warn": "A forrásjegy törlésre került és már nem módosítható, csak az ebből származó jegy marad meg hivatkozási alapnak."
 }

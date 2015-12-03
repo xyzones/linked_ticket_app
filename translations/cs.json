@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Původní popis",
+  "forbidden": "Nemáte oprávnění zobrazit tento propojený tiket.",
   "create_ticket": "Vytvořit tiket",
   "closed_warn": "Nadřazený tiket je uzavřený a nelze jej změnit. Pouze podřízený tiket bude i nadále obsahovat odkaz."
 }

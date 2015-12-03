@@ -1,0 +1,90 @@
+{
+  "app": {
+    "description": "צור וקשר פנייה מפנייה קיימת",
+    "name": "פנייה מקושרת",
+    "parameters": {
+      "ancestry_field": {
+        "label": "שדה הפניה",
+        "helpText": "הזן כאן מזהה שדה טקסט מותאם לשמירת נתוני ההפניה לפנייה המקושרת. דוגמה: 2240041"
+      },
+      "child_tag": {
+        "label": "תגית בת",
+        "helpText": "תגית זו תתווסף לפניית הבת החדשה. דוגמה: child_ticket"
+      }
+    }
+  },
+  "ajax_failure": "אירעה שגיאה. נסה לטעון את האפליקציה מחדש.",
+  "ancestry_field_missing": "<strong>האפליקציה 'פנייה מקושרת':</strong> האם פעלת לפי הוראות ההתקנה והגדרת שדה מותאם?",
+  "has_parent": "לפנייה זו יש פניית אם.",
+  "has_child": "לפנייה זו יש פניות בת.",
+  "form": {
+    "subject": {
+      "label": "נושא:"
+    },
+    "description": {
+      "label": "תיאור:"
+    },
+    "requester_email": {
+      "label": "הדואר האלקטרוני של המבקש"
+    },
+    "requester_name": {
+      "label": "שם המבקש (למבקש חדש בלבד)"
+    },
+    "group": {
+      "label": "קבוצה"
+    },
+    "requester": {
+      "label": "המבקש:",
+      "current_user": "אותי",
+      "ticket_requester": "מבקש הפנייה",
+      "custom": "אחר"
+    },
+    "assignee": {
+      "label": "המטפל:",
+      "current_user": "אותי",
+      "ticket_assignee": "המטפל בפנייה",
+      "custom": "אחר",
+      "group_label": "קבוצת מטפלים",
+      "name_label": "שם המטפל"
+    },
+    "copy_description": {
+      "label": "העתק את תיאור הפנייה הנוכחי"
+    },
+    "ccs": {
+      "label": "מכותבים:"
+    },
+    "tags": {
+      "label": "תגיות:"
+    },
+    "submit": "צור פנייה",
+    "loading": "שולח..."
+  },
+  "ticket": {
+    "id": "מזהה",
+    "subject": "נושא:",
+    "status": "סטטוס",
+    "type": "סוג",
+    "assignee": "המטפל:",
+    "group": "קבוצה",
+    "values": {
+      "status": {
+        "new": "חדשה",
+        "open": "פתוחה",
+        "pending": "בהמתנה",
+        "hold": "מוחזקת",
+        "solved": "פתורה",
+        "closed": "סגורה"
+      },
+      "type": {
+        "problem": "בעיה",
+        "incident": "מקרה",
+        "question": "שאלה",
+        "task": "משימה"
+      }
+    }
+  },
+  "delimiter": "תיאור מקורי",
+  "forbidden": "אינך מורשה להציג את הפנייה המקושרת הזאת.",
+  "create_ticket": "צור פנייה",
+  "closed_warn": "פניית האם סגורה ולא ניתן לשנות אותה. רק פניית הבת תמשיך להכיל הפניה."
+}

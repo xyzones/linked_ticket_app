@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Opprinnelig beskrivelse",
+  "forbidden": "Du har ikke tilgangsrettigheter til å vise denne tilkoblede saken.",
   "create_ticket": "Opprett sak",
   "closed_warn": "Den overordnede saken er avsluttet og kan ikke modifiseres. Det er kun den underordnede saken som fortsatt vil ha en referanse."
 }

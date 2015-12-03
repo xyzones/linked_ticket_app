@@ -84,6 +84,7 @@
     }
   },
   "delimiter": "Alkuperäinen kuvaus",
+  "forbidden": "Sinulla ei ole oikeuksia nähdä tätä linkitettyä tikettiä.",
   "create_ticket": "Luo tiketti",
   "closed_warn": "Päätiketti on suljettu, eikä sitä voi muokata. Vain alatiketti sisältää jatkossa viitteen."
 }
