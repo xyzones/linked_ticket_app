@@ -357,14 +357,15 @@
 
     copyDescription: function(){
       var useRichText = this.ticket().comment().useRichText();
-      var descriptionDelimiter = useRichText ? helpers.fmt("<br />--- %@ ---<br />", this.I18n.t("delimiter")) : helpers.fmt("\n--- %@ --- \n", this.I18n.t("delimiter"));
-      var description = this.formDescription()
+      var newLine = useRichText ? '<br />' : '\n';
+      var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
+      var currentDescription = this.formDescription()
         .split(descriptionDelimiter);
      var ticketDescription = useRichText ? this.convertLineBreaksToHtml(this.ticket().description()) : this.ticket().description();
 
-      var ret = description[0];
+      var ret = currentDescription[0];
 
-      if (description.length === 1)
+      if (currentDescription.length === 1)
         ret += descriptionDelimiter + ticketDescription;
 
       this.formDescription(ret);
