@@ -356,14 +356,18 @@
     },
 
     copyDescription: function(){
-      var descriptionDelimiter = this.ticket().comment().useRichText() ? helpers.fmt("<br />--- %@ ---<br />", this.I18n.t("delimiter")) : helpers.fmt("\n--- %@ --- \n", this.I18n.t("delimiter"));
-      var description = this.formDescription()
+      var useRichText = this.ticket().comment().useRichText();
+      var ticketDescription = this.ticket().description();
+      var newLine = useRichText ? '<br />' : '\n';
+      var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
+      var formDescription = this.formDescription()
         .split(descriptionDelimiter);
+     var ticketDescription = useRichText ? this.convertLineBreaksToHtml(ticketDescription) : ticketDescription;
 
-      var ret = description[0];
+      var ret = formDescription[0];
 
-      if (description.length === 1)
-        ret += descriptionDelimiter + this.ticket().description();
+      if (formDescription.length === 1)
+        ret += descriptionDelimiter + ticketDescription;
 
       this.formDescription(ret);
     },
@@ -594,6 +598,9 @@
         return;
 
       return this.childRegex.exec(this.ancestryValue())[1];
+    },
+    convertLineBreaksToHtml: function(strToConvert){
+      return strToConvert.replace(/\n/g, "<br />");
     }
   };
 }());
