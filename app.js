@@ -95,12 +95,12 @@
     onActivated: function(data) {
       _.defer(function() {
         if (this.hideAncestryField()) {
-          this.loadIfDataReady();
+          this.loadIfDataReady(data.firstLoad);
         }
       }.bind(this));
     },
 
-    loadIfDataReady: function(){
+    loadIfDataReady: function(firstLoad){
       if (this.ticket() &&
           this.ticket().id() &&
           !_.isUndefined(this.ancestryValue())){
@@ -108,7 +108,9 @@
         if (this.hasChild() || this.hasParent())
           return this.ajax('fetchTicket', this.childID() || this.parentID());
 
-        this.displayHome();
+        if (firstLoad) {
+          this.displayHome();
+        }
       }
     },
 
