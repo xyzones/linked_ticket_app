@@ -6,6 +6,7 @@
     events: {
       // APP EVENTS
       'app.created'                     : 'onCreated',
+      'app.activated'                   : 'onActivated',
       'ticket.status.changed'           : 'loadIfDataReady',
       // AJAX EVENTS
       'createChildTicket.done'          : 'createChildTicketDone',
@@ -92,7 +93,11 @@
       }
     },
 
-    onCreated: function(data) {
+    onCreated: function() {
+      this.displayHome();
+    },
+
+    onActivated: function() {
       _.defer(function() {
         if (this.hideAncestryField()) {
           this.loadIfDataReady();
@@ -107,8 +112,6 @@
 
         if (this.hasChild() || this.hasParent())
           return this.ajax('fetchTicket', this.childID() || this.parentID());
-
-        this.displayHome();
       }
     },
 
