@@ -5,7 +5,7 @@
 
     events: {
       // APP EVENTS
-      'app.activated'                   : 'onActivated',
+      'app.created'                     : 'onCreated',
       'ticket.status.changed'           : 'loadIfDataReady',
       // AJAX EVENTS
       'createChildTicket.done'          : 'createChildTicketDone',
@@ -92,15 +92,15 @@
       }
     },
 
-    onActivated: function(data) {
+    onCreated: function(data) {
       _.defer(function() {
         if (this.hideAncestryField()) {
-          this.loadIfDataReady(data.firstLoad);
+          this.loadIfDataReady();
         }
       }.bind(this));
     },
 
-    loadIfDataReady: function(firstLoad){
+    loadIfDataReady: function(){
       if (this.ticket() &&
           this.ticket().id() &&
           !_.isUndefined(this.ancestryValue())){
@@ -108,9 +108,7 @@
         if (this.hasChild() || this.hasParent())
           return this.ajax('fetchTicket', this.childID() || this.parentID());
 
-        if (firstLoad) {
-          this.displayHome();
-        }
+        this.displayHome();
       }
     },
 
