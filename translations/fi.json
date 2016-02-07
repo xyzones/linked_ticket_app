@@ -15,8 +15,8 @@
   },
   "ajax_failure": "Tapahtui virhe. Yritä ladata sovellus uudelleen.",
   "ancestry_field_missing": "<strong>Linkitetty tikettisovellus:</strong> Noudatitko asennusohjeita ja määrititkö mukautetun kentän?",
-  "has_parent": "Tämä tiketti on päätiketti.",
-  "has_child": "Tämä tiketti on alatiketti.",
+  "has_parent": "Tällä tiketillä on päätiketti.",
+  "has_child": "Tällä tiketillä on alatiketti.",
   "form": {
     "subject": {
       "label": "Aihe:"
