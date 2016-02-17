@@ -83,6 +83,12 @@
           type: 'GET'
         };
       },
+      fetchComments: function(ticket_id){
+        return {
+          url: '/api/v2/tickets/' + ticket_id + '/comments.json',
+          type: 'GET'
+        };
+      },
       paginatedRequest: function(request, page, args) {
         var requestArgs = this.requests[request];
         if (_.isFunction(requestArgs)) {
@@ -359,20 +365,25 @@
     },
 
     copyDescription: function(){
-      var useRichText = this.ticket().comment().useRichText();
-      var ticketDescription = this.ticket().description();
-      var newLine = useRichText ? '<br />' : '\n';
-      var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
-      var formDescription = this.formDescription()
-        .split(descriptionDelimiter);
-      ticketDescription = useRichText ? this.convertLineBreaksToHtml(ticketDescription) : ticketDescription;
+      //calling out to comments endpoint here because the lotus model always returns HTML
+      //for the this.ticket().comments()[0].value and we may need MD or HTML.
+      this.ajax('fetchComments', this.ticket().id()).then(function(data) {
+        var useRichText = this.ticket().comment().useRichText();
+        var ticketDescription = data.comments[0];
+        var newTicketContent = useRichText ? ticketDescription.html_body : ticketDescription.body;
+        var newLine = useRichText ? '<br />' : '\n';
+        var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
+        var formDescription = this.formDescription()
+          .split(descriptionDelimiter);
+        //newTicketContent = useRichText ? this.convertLineBreaksToHtml(newTicketContent) : newTicketContent;
 
-      var ret = formDescription[0];
+        var ret = formDescription[0];
 
-      if (formDescription.length === 1)
-        ret += descriptionDelimiter + ticketDescription;
+        if (formDescription.length === 1)
+          ret += descriptionDelimiter + newTicketContent;
 
-      this.formDescription(ret);
+        this.formDescription(ret);
+      });
     },
 
     bindAutocompleteOnRequesterEmail: function(){
