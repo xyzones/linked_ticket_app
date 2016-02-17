@@ -83,6 +83,12 @@
           type: 'GET'
         };
       },
+      fetchComments: function(ticketId){
+        return {
+          url: '/api/v2/tickets/' + ticketId + '/comments.json?per_page=1',
+          type: 'GET'
+        };
+      },
       paginatedRequest: function(request, page, args) {
         var requestArgs = this.requests[request];
         if (_.isFunction(requestArgs)) {
@@ -359,20 +365,28 @@
     },
 
     copyDescription: function(){
-      var useRichText = this.ticket().comment().useRichText();
-      var ticketDescription = this.ticket().description();
-      var newLine = useRichText ? '<br />' : '\n';
-      var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
-      var formDescription = this.formDescription()
-        .split(descriptionDelimiter);
-      ticketDescription = useRichText ? this.convertLineBreaksToHtml(ticketDescription) : ticketDescription;
+      this.spinnerOn();
+      this.disableSubmit();
 
-      var ret = formDescription[0];
+      this.ajax('fetchComments', this.ticket().id()).then(function(data) {
+        var useRichText = this.ticket().comment().useRichText();
+        var ticketDescription = data.comments[0];
+        var newTicketContent = useRichText ? ticketDescription.html_body : ticketDescription.body;
+        var newLine = useRichText ? '<br />' : '\n';
+        var descriptionDelimiter = helpers.fmt(newLine + "--- %@ ---" + newLine, this.I18n.t("delimiter"));
+        var formDescription = this.formDescription().split(descriptionDelimiter);
 
-      if (formDescription.length === 1)
-        ret += descriptionDelimiter + ticketDescription;
+        var ret = formDescription[0];
 
-      this.formDescription(ret);
+        if (formDescription.length === 1) {
+          ret += descriptionDelimiter + newTicketContent;
+        }
+
+        this.formDescription(ret);
+
+        this.spinnerOff();
+        this.enableSubmit();
+      }.bind(this));
     },
 
     bindAutocompleteOnRequesterEmail: function(){
