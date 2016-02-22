@@ -458,7 +458,11 @@
         ]
       };
 
-      params.comment[this.ticket().comment().useRichText() ? 'html_body' : 'body'] = this.formDescription();
+      if (this.ticket().comment().useRichText()){
+        params.comment.html_body = this.convertLineBreaksToHtml(this.formDescription());
+      } else {
+        params.comment.body = this.formDescription();
+      }
 
       _.extend(params,
                this.serializeRequesterAttributes(),
