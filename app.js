@@ -450,6 +450,7 @@
       var params = {
         "subject": this.formSubject(),
         "comment": {},
+        "ticket_form_id": this.ticket().form().id(),
         "custom_fields": [
           {
             id: this.ancestryFieldId(),
